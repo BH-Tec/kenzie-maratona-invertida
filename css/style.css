@@ -3,6 +3,9 @@
   --CinzaEscuro2: #606060;
   --CinzaClaro: #E5E5E5;
   --Branco: #FFFFFF;
+  --Azul1: #6D83F2;
+  --Azul2: #6A98F0;
+  --Azul3: #00082f;
 }
 
 body {
@@ -236,4 +239,32 @@ main {
 
 .playlist_li_end button:hover {
   cursor: pointer;
+}
+
+/* FOOTER FIXED */
+footer {
+  position: relative;
+  font-size: 1rem;
+  color: var(--Preto);
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--CinzaClaro);
+  vertical-align: baseline;
+  display: flex;
+  opacity: 0.7;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+footer a {
+  font-weight: bold;
+  color: var(--Azul3);
+  text-decoration: none;
+  justify-content: center;
 }
