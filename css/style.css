@@ -154,12 +154,15 @@ main {
   margin-bottom: 50px;
 }
 
-.main_card_bottom span {
+.main_card_bottom button {
   font-size: 20px;
   margin-bottom: 50px;
+  border: none;
+  background-color: transparent;
+  color: var(--Branco)
 }
 
-.main_card_bottom span:hover {
+.main_card_bottom button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
