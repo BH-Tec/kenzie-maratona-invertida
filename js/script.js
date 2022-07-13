@@ -38,7 +38,7 @@ function cardPrincipal(temporada) {
 
 //Listar card
 function listarTemporadas() {
-  for (let i= 0; i < temporadas.length; i++) {
+  for (let i = 0; i < temporadas.length; i++) {
       let card = cardPrincipal(temporadas[i])
       container.appendChild(card)
   }
@@ -57,22 +57,22 @@ function cardTemporadaSelecionada(temporada) {
   const playlistCenter = document.createElement("div")
   playlistCenter.classList.add("playlist_li_center")
 
-  playlistCenter.insertAdjacentHTML("aftergebin", `
-  <div>
-    <h4>${temporada.nome}</h4>
-    <span>${temporada.temporada}</span>
-  </div class="playlist_li_playButton">
-    <div>
-    <img src="./assets/img/play-icon.png" alt="">
-  <span>Assistir agora</span>
-  </div>
-`)
+  playlistCenter.insertAdjacentHTML("afterbegin", `
+      <div>
+          <h4>${temporada.nome}</h4>
+          <span>${temporada.temporada}</span>
+      </div>
+      <div class="playlist_li_playButton">
+          <img src="./assets/img/play-icon.png" />
+          <span>Assistir agora</span>
+      </div>
+  `)
 
-const playlistEnd = document.createElement("div")
-playlistEnd.classList.add("playlist_li_end")
+  const playlistEnd = document.createElement("div")
+  playlistEnd.classList.add("playlist_li_end")
 
-const button = document.createElement("button")
-button.id = temporada.id
+  const button = document.createElement("button")
+  button.id = temporada.id
 
   playlistEnd.appendChild(button)
 
@@ -85,29 +85,27 @@ button.id = temporada.id
 container.addEventListener("click", selecionarTemporada)
 function selecionarTemporada(event) {
 
-  const elementoHTML = event.target
+    const elementoHTML = event.target
 
-  if (elementoHTML.tagName == "BUTTON") {
-    const idTemporada = elementoHTML.id
+    if (elementoHTML.tagName == "BUTTON") {
+      const idTemporada = elementoHTML.id
+      const temporadaEncontrada = temporadas.find((temporada) => temporada.id == idTemporada)
+      temporadasSelecionadas.push(temporadaEncontrada)
 
-    const temporadaEncontrada = temporadas.find(
-      (temporada) => temporada.id == idTemporada
-    )
-    temporadasSelecionadas.push(temporadaEncontrada)
-
-    listarTemporadasSelecionadas()
-  }
+      listarTemporadasSelecionadas()
+    }
 }
 
 function listarTemporadasSelecionadas() {
   playlistContainer.innerHTML = ""
   for(let i = 0; i < temporadasSelecionadas.length; i++) {
-    playlistContainer.appendChild(card)
+      const card = cardTemporadaSelecionada(temporadasSelecionadas[i])
+      playlistContainer.appendChild(card)
   }
 }
 
 //Remover temporada da fila
-playlistContainer.addEventListener("click", function() {
+playlistContainer.addEventListener("click", function(event) {
   const elementoHTML = event.target
   if (elementoHTML.tagName == "BUTTON") {
     elementoHTML.closest("li").remove()
@@ -123,4 +121,4 @@ playlistContainer.addEventListener("click", function() {
   }
 })
 
-// Fazer filtros
+//Fazer filtros de temporadas
