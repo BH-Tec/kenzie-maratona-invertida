@@ -1,11 +1,10 @@
-
 const container = document.querySelector(".main_vitrine")
 
 const playlistContainer = document.querySelector("#playlist_container")
 
 let temporadasSelecionadas = []
 
-// Criar card temporada
+//Criar card temporada
 function cardPrincipal(temporada) {
   const article = document.createElement("article")
   article.classList.add("main_card")
@@ -37,7 +36,7 @@ function cardPrincipal(temporada) {
   return article
 }
 
-// Listar card
+//Listar card
 function listarTemporadas() {
   for (let i= 0; i < temporadas.length; i++) {
       let card = cardPrincipal(temporadas[i])
@@ -47,7 +46,7 @@ function listarTemporadas() {
 
 listarTemporadas()
 
-// Criar card temporada selecionada
+//Criar card temporada selecionada
 function cardTemporadaSelecionada(temporada) {
   const li = document.createElement("li")
 
@@ -73,6 +72,7 @@ const playlistEnd = document.createElement("div")
 playlistEnd.classList.add("playlist_li_end")
 
 const button = document.createElement("button")
+button.id = temporada.id
 
   playlistEnd.appendChild(button)
 
@@ -81,7 +81,7 @@ const button = document.createElement("button")
   return li
 }
 
-// Adicionar um evento para adicionar a temporada na fila
+//Adicionar um evento para adicionar a temporada na fila
 container.addEventListener("click", selecionarTemporada)
 function selecionarTemporada(event) {
 
@@ -107,5 +107,20 @@ function listarTemporadasSelecionadas() {
 }
 
 //Remover temporada da fila
+playlistContainer.addEventListener("click", function() {
+  const elementoHTML = event.target
+  if (elementoHTML.tagName == "BUTTON") {
+    elementoHTML.closest("li").remove()
+
+    //capturar o id do button em uma variável
+    //usar o find para encontrar a temporada com o id capturado
+    //usar o indexof para encontrar o índice da temporada no array tenmporadasSelecionadas
+    //remover a temporada com o splice
+
+    //doc find: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+    //doc indexof: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+    //doc splice: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+  }
+})
 
 // Fazer filtros
