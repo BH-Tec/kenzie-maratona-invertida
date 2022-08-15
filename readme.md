@@ -1,5 +1,5 @@
 <h1 align="center">
-  Maratona Invertida => Desenvolvendo plataforma de streamming
+  Maratona Invertida - Plataforma de streamming
 </h1>
 
 <p align="center">
@@ -28,12 +28,5 @@ Projeto desenvolvendo uma plataforma de streamming para a Maratona Invertida no 
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
-
----
-
-## Aulas
-
-- Stage 1 - HTML + CSS
-- Stage 2 - JavaScript
 
 ---
